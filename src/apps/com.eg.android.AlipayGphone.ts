@@ -90,7 +90,7 @@ export default defineGkdApp({
           name: '底部悬浮提示',
           activityIds: [
             'com.alipay.android.phone.messageboxapp.ui.MsgBoxTabActivity',
-            'com.eg.android.AlipayGphone.AlipayLogin',
+            '.AlipayLogin',
           ],
           matches: [
             '[text^="开启通知权限" || text^="开通推送通知"][visibleToUser=true]',
@@ -240,7 +240,7 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          activityIds: 'com.eg.android.AlipayGphone.AlipayLogin',
+          activityIds: '.AlipayLogin',
           matches:
             'RelativeLayout[childCount=2][desc="全屏广告"] ImageView[desc="关闭"]',
           snapshotUrls: 'https://i.gkd.li/i/14034152',
@@ -594,6 +594,7 @@ export default defineGkdApp({
     {
       key: 29,
       name: '功能类-无法访问时点击[返回]',
+      desc: '访问被拒绝/人气太旺啦',
       rules: [
         {
           fastQuery: true,
@@ -602,10 +603,11 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverTransActivity$Main',
             '.AlipayLogin',
             'com.alipay.android.phone.wallet.blessingcard_receive.biz.activity.ReceiveDialogActivity',
+            'com.alipay.android.living.activity.LivingDetailActivity',
           ],
           matches: [
             '[text="访问被拒绝" || text="人气太旺啦，请稍后再试"][visibleToUser=true]',
-            '[id="com.alipay.mobile.antui:id/back_button"][visibleToUser=true]',
+            '[id="com.alipay.mobile.antui:id/back_button"][clickable=true]',
           ],
           exampleUrls: 'https://e.gkd.li/c1ddb8bf-084b-4109-b777-96c02858d266',
           snapshotUrls: [
@@ -614,6 +616,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/23549719',
             'https://i.gkd.li/i/24183318',
             'https://i.gkd.li/i/25199767',
+            'https://i.gkd.li/i/25485052',
           ],
         },
       ],
