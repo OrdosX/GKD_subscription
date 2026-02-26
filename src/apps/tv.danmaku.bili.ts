@@ -716,5 +716,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 29,
+      name: '局部广告-黄色横幅提示',
+      desc: '点击横幅右边x掉',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: 'tv.danmaku.bili.ui.webview.MWebActivity',
+          matches:
+            '@Image[text^="yellow-tip-close"][visibleToUser=true] - View[childCount=1] - Image < View[childCount=3] <<n [vid="webview"]',
+          snapshotUrls: 'https://li.chenge.eu.org/i/25563755',
+        },
+      ],
+    },
   ],
 });
