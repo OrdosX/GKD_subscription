@@ -730,5 +730,21 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 30,
+      name: '功能类-创作中心自动展开更多',
+      desc: '自动点击展开',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds:
+            'com.bilibili.upper.module.uppercenter.activity.UpperCenterMainActivityV4',
+          matches:
+            '[vid="tv_expand"][text!="收起"][clickable=true][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/25563935',
+          excludeSnapshotUrls: 'https://i.gkd.li/i/25563937', // 已展开状态
+        },
+      ],
+    },
   ],
 });
