@@ -7,34 +7,22 @@ export default defineGkdApp({
     {
       key: 1,
       name: '全屏广告',
+      fastQuery: true,
+      activityIds: 'com.yandex.mobile.ads.common.AdActivity',
       rules: [
         {
           key: 0,
-          fastQuery: true,
-          activityIds: 'com.yandex.mobile.ads.common.AdActivity',
-          anyMatches: [
+          matches:
             '@ImageView[index=parent.childCount.minus(1)][clickable=true][visibleToUser=true] < ViewGroup <3 ViewGroup <2 ViewGroup +5 [text="Learn more"]',
-            '@ImageView[clickable=true][visibleToUser=true] <<n ViewGroup >n [text^="AD"]',
-          ],
-          snapshotUrls: [
-            'https://i.gkd.li/i/25241260',
-            'https://i.gkd.li/i/25241244',
-          ],
-          exampleUrls: [
-            'https://e.gkd.li/ef5cd31d-89e2-4d60-81d4-7f2cbdc7a1b3',
-            'https://e.gkd.li/f397aff1-ed45-4ad0-a644-d48f8a1fe0b7',
-          ],
+          snapshotUrls: 'https://i.gkd.li/i/25241260',
         },
         {
           key: 1,
-          fastQuery: true,
-          activityIds: 'com.yandex.mobile.ads.common.AdActivity',
           matches: '@ImageView - ViewGroup >2 [text="AD"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/25241244',
         },
         {
           key: 2,
-          fastQuery: true,
           activityIds: 'com.applovin.adview.AppLovinFullscreenActivity',
           matches:
             'View[childCount=0] < @FrameLayout[clickable=true][childCount=1] <2 FrameLayout < [id="android:id/content"]',
