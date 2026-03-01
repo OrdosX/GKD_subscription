@@ -79,10 +79,10 @@ export default defineGkdApp({
     {
       key: 3,
       name: '分段广告-我的页面-右侧悬浮反馈图标',
+      activityIds: 'com.kugou.android.app.MediaActivity',
       rules: [
         {
           key: 0,
-          activityIds: 'com.kugou.android.app.MediaActivity',
           matches:
             'FrameLayout > RelativeLayout > @ImageView[vid!=null][clickable=true][visibleToUser=true] +(2,3) ImageView[vid!=null]',
           snapshotUrls: [
@@ -93,7 +93,6 @@ export default defineGkdApp({
         {
           key: 1,
           preKeys: 0,
-          activityIds: 'com.kugou.android.app.MediaActivity',
           fastQuery: true,
           matches: '[text="是否取消？"] +4 * > [text="确认"]',
           snapshotUrls: 'https://i.gkd.li/i/14321724',
@@ -118,19 +117,17 @@ export default defineGkdApp({
       key: 5,
       name: '全屏广告-弹窗广告',
       desc: '点击关闭',
+      fastQuery: true,
+      activityIds: 'com.kugou.android.app.MediaActivity',
       rules: [
         {
           key: 0,
-          fastQuery: true,
-          activityIds: 'com.kugou.android.app.MediaActivity',
           matches: '@[text*="跳过"] + [text*="广告"]',
           exampleUrls: 'https://e.gkd.li/64dd159b-bff5-4dff-a4b9-d63f5b34acb7',
           snapshotUrls: 'https://i.gkd.li/i/16407631',
         },
         {
           key: 1,
-          fastQuery: true,
-          activityIds: 'com.kugou.android.app.MediaActivity',
           matches:
             '@ImageView[childCount=0][clickable=true][visibleToUser=true][width<160 && height<160] <2 ViewGroup[childCount=3] < FrameLayout < LinearLayout < LinearLayout <2 LinearLayout < FrameLayout < FrameLayout <2 FrameLayout < [id="android:id/content"]',
           exampleUrls: 'https://e.gkd.li/0776da1e-3ff6-4fba-a7e9-de8fa1fe5344',
@@ -138,8 +135,6 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          fastQuery: true,
-          activityIds: 'com.kugou.android.app.MediaActivity',
           matches:
             '@[clickable=true][visibleToUser=true] - FrameLayout <<2 [id="android:id/content"]',
           snapshotUrls: 'https://i.gkd.li/i/25640086',
@@ -151,17 +146,16 @@ export default defineGkdApp({
       key: 6,
       name: '功能类-播放页听歌领VIP',
       fastQuery: true,
+      activityIds: 'com.kugou.android.app.MediaActivity',
       rules: [
         {
           key: 0,
-          activityIds: 'com.kugou.android.app.MediaActivity',
           matches: '@LinearLayout[clickable=true] > TextView[text="听歌领VIP"]',
           exampleUrls: 'https://e.gkd.li/df927124-4e7a-43bd-8d42-3eb428eecf78',
           snapshotUrls: 'https://i.gkd.li/i/16554695',
         },
         {
           key: 1,
-          activityIds: 'com.kugou.android.app.MediaActivity',
           matches:
             '@ImageView[clickable=true] - FrameLayout >2 [text="立即领取福利"]',
           exampleUrls: 'https://e.gkd.li/51fbe6aa-d0da-4f08-aae0-2eed4e6c0ad1',
@@ -204,19 +198,16 @@ export default defineGkdApp({
     {
       key: 9,
       name: '局部广告',
+      activityIds: 'com.kugou.common.useraccount.app.KgUserLoginAndRegActivity',
       rules: [
         {
           key: 0,
           fastQuery: true,
-          activityIds:
-            'com.kugou.common.useraccount.app.KgUserLoginAndRegActivity',
           matches: '@[text*="跳过"] + [text*="广告"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/25021020',
         },
         {
           key: 1,
-          activityIds:
-            'com.kugou.common.useraccount.app.KgUserLoginAndRegActivity',
           matches:
             '@ImageView[clickable=true][childCount=0][parent.childCount<4][index=parent.childCount.minus(1)][width<60 && height<60] - [!(text=null)]',
           snapshotUrls: [
