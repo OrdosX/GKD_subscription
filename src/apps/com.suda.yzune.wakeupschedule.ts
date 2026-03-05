@@ -10,8 +10,7 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          activityIds:
-            'com.suda.yzune.wakeupschedule.schedule.ScheduleActivity',
+          activityIds: '.schedule.ScheduleActivity',
           matches: '@[vid="ib_close"][clickable=true] +n [text$="五星好评"]',
           snapshotUrls: 'https://i.gkd.li/i/24230090',
         },
@@ -23,8 +22,7 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          activityIds:
-            'com.suda.yzune.wakeupschedule.schedule.ScheduleActivity',
+          activityIds: '.schedule.ScheduleActivity',
           matches: ['[text^="新版"]', '[vid="update_close"][clickable=true]'],
           snapshotUrls: 'https://i.gkd.li/i/24336743',
         },
@@ -43,6 +41,18 @@ export default defineGkdApp({
             '[text="离开"][clickable=true]',
           ],
           snapshotUrls: 'https://i.gkd.li/i/25755603',
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '全屏广告',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: '.schedule.ScheduleActivity',
+          matches: '[vid="iv_close"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/25769013',
         },
       ],
     },
