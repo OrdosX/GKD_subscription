@@ -117,5 +117,21 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 4,
+      name: '权限提示-全屏获取权限提示',
+      desc: '包含存储权限、定位权限等',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: '.activity.PermissionsWarnActivity',
+          matches: [
+            '[text$="需要获取以下权限"]',
+            '[text="暂不设置"][clickable=true]',
+          ],
+          snapshotUrls: 'https://i.gkd.li/i/25814113',
+        },
+      ],
+    },
   ],
 });
