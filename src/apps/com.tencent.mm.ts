@@ -128,14 +128,21 @@ export default defineGkdApp({
             '.ui.LauncherUI',
           ],
           matches: [
-            '[text="登录 Windows 微信" || text^="登入 WeChat" || text^="Log in to Weixin for"][visibleToUser=true]',
+            '[text^="登录 Win" || text^="登录桌面" || text^="登入 WeChat" || text^="Log in to Weixin for"][visibleToUser=true]',
             '[text="登录" || text="登入" || text="Log In"][visibleToUser=true]',
           ],
           snapshotUrls: [
-            'https://i.gkd.li/i/13522625',
+            'https://i.gkd.li/i/13522625', // zh_CN
             'https://i.gkd.li/i/13522577',
-            'https://i.gkd.li/i/22356438',
-            'https://i.gkd.li/i/25315046', //zh_TW
+            'https://i.gkd.li/i/22356438', // En_US
+            'https://i.gkd.li/i/25315046', // zh_TW
+            'https://i.gkd.li/i/25815630', // Linux_zh_CN
+          ],
+          exampleUrls: [
+            'https://e.gkd.li/4434dd75-1c9c-4c4a-a6fb-47490b751ec4', // zh_CN
+            'https://e.gkd.li/07d6de6e-3734-42e4-8c33-6a176bc497dd', // En_US
+            'https://e.gkd.li/1900ff84-0619-42df-bdaa-2e552adfce38', // zh_TW
+            'https://e.gkd.li/ceb92d28-4964-4497-8e5e-271d84cac685', // Linux_zh_CN
           ],
         },
       ],
