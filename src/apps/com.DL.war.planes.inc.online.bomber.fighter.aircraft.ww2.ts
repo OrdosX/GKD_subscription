@@ -28,6 +28,18 @@ export default defineGkdApp({
             'View[childCount=0] < @FrameLayout[clickable=true][childCount=1] <2 FrameLayout < [id="android:id/content"]',
           snapshotUrls: 'https://i.gkd.li/i/25241191',
         },
+        {
+          key: 3,
+          activityIds: 'com.vungle.ads.internal.ui.VungleActivity',
+          anyMatches: [
+            'Image - @[text="Close button"] -n Button -2 * < [id*="ad"] <<5 [id="android:id/content"]',
+            '@[text="Close button"] <2 View -2 [desc="Liftoff Privacy"] -2 * < [id*="_ad"] <<5 [id="android:id/content"]',
+          ],
+          snapshotUrls: [
+            'https://i.gkd.li/i/25823455',
+            'https://i.gkd.li/i/25823527',
+          ],
+        },
       ],
     },
   ],
