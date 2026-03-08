@@ -215,22 +215,25 @@ export default defineGkdApp({
     {
       key: 15,
       name: '功能类-自动签到',
+      desc: '①点击[签到] ②退出福利中心',
+      fastQuery: true,
       rules: [
         {
           key: 0,
-          fastQuery: true,
+          name: '①点击[签到]',
           activityIds: '.ui.activity.MainGroupActivity',
           excludeMatches: '[vid="tvTipNum"][text="--"][visibleToUser=true]',
           matches: '@[vid="btnCheckIn"] >2 [text="签到"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/22634962',
           excludeSnapshotUrls: [
-            'https://i.gkd.li/i/23210761',
-            'https://i.gkd.li/i/23211622',
+            'https://i.gkd.li/i/23210761', // 已签到
+            'https://i.gkd.li/i/23211622', // 未加载完?
           ],
         },
         {
+          // 有时签完到会跳转福利中心页
           preKeys: [0],
-          fastQuery: true,
+          name: '②退出福利中心',
           activityIds: '.ui.activity.QDBrowserActivity',
           matches:
             '@View[id=null][childCount=0][clickable=true] < View < View < WebView[text="福利中心"] < WebView < FrameLayout < [vid="webViewContainer"]',
