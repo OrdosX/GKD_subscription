@@ -379,5 +379,29 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 15,
+      name: '分段广告-Live卡Ad',
+      desc: '长按"直播中"标识的卡片-点"不喜欢"',
+      fastQuery: true,
+      activityIds: '.index.v2.IndexActivityV2',
+      rules: [
+        {
+          key: 0,
+          action: 'longClick',
+          name: '长按"直播中"卡片',
+          matches:
+            '[text="直播中"] <<3 [vid="liveTagLottieLayout"] + [vid="liveDescLayout"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/25873879',
+        },
+        {
+          preKeys: [0],
+          name: '点"不喜欢"',
+          matches: '@[clickable=true] > [text="不喜欢"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/25874144',
+          exampleUrls: 'https://e.gkd.li/6a32974d-ea39-4f85-9f76-2d8b8a3fc679',
+        },
+      ],
+    },
   ],
 });
