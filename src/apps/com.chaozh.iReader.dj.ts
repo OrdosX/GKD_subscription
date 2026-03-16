@@ -87,11 +87,12 @@ export default defineGkdApp({
           key: 0,
           activityIds: 'com.zhangyue.iReader.read.ui.Activity_BookBrowser_TXT',
           matches:
-            '[vid="bookview"] >8 @FrameLayout - [text^="广告" || text$="赞助作者" || text$="正版内容" || text$="奖励" || text$="耕耘" || text^="助力作者"]',
+            '[vid="bookview"] >8 @FrameLayout - [text^="广告" || text$="赞助作者" || text$="正版内容" || text$="奖励" || text$="耕耘" || text^="助力作者" || text$="免费阅读"]',
           snapshotUrls: [
             'https://i.gkd.li/i/25118364',
             'https://i.gkd.li/i/25307532',
             'https://i.gkd.li/i/24882824',
+            'https://i.gkd.li/i/26028026',
           ],
           exampleUrls: 'https://e.gkd.li/39ef092b-8e25-47eb-b0b5-8bc183488ca9',
           excludeSnapshotUrls: 'https://i.gkd.li/i/25118320', //p2_循环误触-画面与结构树不匹配，估计得多翻2页才刷新
@@ -99,11 +100,14 @@ export default defineGkdApp({
         {
           key: 1,
           activityIds: 'com.qq.e.ads.PortraitADActivity',
-          matches:
+          anyMatches: [
             '@[text=""][visibleToUser=true][index=parent.childCount.minus(1)] <<2 View <3 WebView[childCount=4] < * - RelativeLayout >3 [text*="获得奖励"]',
+            '@View[visibleToUser=true] - LinearLayout >2 [text*="获得奖励"]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/25118663',
             'https://i.gkd.li/i/25967375',
+            'https://i.gkd.li/i/25972909',
           ],
           exampleUrls: 'https://e.gkd.li/3ce04d0a-c2b9-4087-8af6-541a2178eedb',
         },
