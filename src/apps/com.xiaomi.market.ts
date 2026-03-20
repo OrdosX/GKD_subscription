@@ -167,6 +167,9 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
           matches:
             '@[clickable=true] > [text="我的"] <<n [vid="tab_container_layout"]',
           snapshotUrls: 'https://i.gkd.li/i/26096077',
