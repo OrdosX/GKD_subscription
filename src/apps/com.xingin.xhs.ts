@@ -179,8 +179,8 @@ export default defineGkdApp({
     },
     {
       key: 6,
-      name: '功能类-评论区-自动展开回复',
-      desc: '自动展开更多回复',
+      name: '功能类-评论区-自动展开回复', // 重构，因为没完没了的展开，更多展开在key17
+      desc: '自动展开x条回复,更多展开在下面',
       rules: [
         {
           fastQuery: true,
@@ -189,7 +189,7 @@ export default defineGkdApp({
             'com.xingin.matrix.detail.activity.DetailFeedActivity',
           ],
           matches:
-            '@[clickable=true] > [vid="loadMoreTV"][text^="展开"][text$="回复"]',
+            '@[clickable=true] > [vid="loadMoreTV"][text^="展开"][text$="条回复"]',
           snapshotUrls: [
             'https://i.gkd.li/i/25048251',
             'https://i.gkd.li/i/25823242',
@@ -414,6 +414,29 @@ export default defineGkdApp({
             'ViewGroup > [text="登录确认"] +6 @[clickable=true] > [text="确认登录"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/26029586',
           exampleUrls: 'https://e.gkd.li/dfc35798-6ab3-4941-bf23-572de9f3a19c',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '功能类-评论区-展开更多回复',
+      desc: '自动展开更多回复',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: [
+            'com.xingin.matrix.notedetail.NoteDetailActivity',
+            'com.xingin.matrix.detail.activity.DetailFeedActivity',
+          ],
+          matches:
+            '@[clickable=true] > [vid="loadMoreTV"][text="展开更多回复"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/25048251',
+            'https://i.gkd.li/i/25823242',
+          ],
+          exampleUrls: [
+            'https://e.gkd.li/a211ebb1-2177-4264-9a60-280a5f8e2777',
+          ],
         },
       ],
     },
