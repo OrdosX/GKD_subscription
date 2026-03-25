@@ -8,7 +8,6 @@ export default defineGkdApp({
       key: 0,
       name: '开屏广告',
       fastQuery: true,
-      activityIds: '.activity.common.splash.SplashActivity',
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -30,8 +29,7 @@ export default defineGkdApp({
       rules: [
         {
           activityIds: '.activity.common.MainActivity',
-          matches:
-            '@[id="com.steampy.app:id/imgClose"] - RelativeLayout [id="com.steampy.app:id/tv_update"]',
+          matches: '@[vid="imgClose"] - RelativeLayout [vid="tv_update"]',
           snapshotUrls: 'https://i.gkd.li/i/13695519',
         },
       ],
