@@ -13,11 +13,8 @@ export default defineGkdApp({
       resetMatch: 'app',
       rules: [
         {
-          activityIds: 'cn.chuci.and.wkfenshen.ActMain',
-          matches: [
-            '[id="cn.chuci.and.wkfenshen:id/dialog_local_buy_btn"]',
-            '[id="cn.chuci.and.wkfenshen:id/action_close"]',
-          ],
+          activityIds: '.ActMain',
+          matches: ['[vid="dialog_local_buy_btn"]', '[vid="action_close"]'],
           snapshotUrls: 'https://i.gkd.li/i/13226988',
         },
       ],

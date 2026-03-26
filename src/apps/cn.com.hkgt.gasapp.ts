@@ -13,9 +13,9 @@ export default defineGkdApp({
       resetMatch: 'app',
       rules: [
         {
-          activityIds: 'cn.com.hkgt.gasapp.dialog.BannerDialog',
-          matches: 'ImageView[id="cn.com.hkgt.gasapp:id/exit"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/12744270',
+          activityIds: '.dialog.BannerDialog',
+          matches: 'ImageView[vid="exit"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/12744270', //旧快照
         },
       ],
     },

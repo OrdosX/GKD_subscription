@@ -10,7 +10,7 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          activityIds: 'chuxin.shimo.shimowendang.MainActivity',
+          activityIds: '.MainActivity',
           matches:
             '@[desc="banner-desktop-announcement-close"][visibleToUser=true] - ViewGroup > [text*="免费试用企业版"]',
           snapshotUrls: 'https://i.gkd.li/i/13627960',

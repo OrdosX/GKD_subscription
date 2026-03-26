@@ -10,7 +10,7 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          activityIds: 'cn.com.hzb.mobilebank.per.MainActivity',
+          activityIds: '.MainActivity',
           matchRoot: true,
           forcedTime: 10000,
           matches:
@@ -31,7 +31,7 @@ export default defineGkdApp({
           matchTime: 10000,
           actionMaximum: 1,
           resetMatch: 'app',
-          activityIds: 'cn.com.hzb.mobilebank.per.MainActivity',
+          activityIds: '.MainActivity',
           matches: '@[clickable=true] > [text^="立即登录"]',
           snapshotUrls: 'https://i.gkd.li/i/25150391',
         },

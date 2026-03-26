@@ -13,9 +13,9 @@ export default defineGkdApp({
       resetMatch: 'app',
       rules: [
         {
-          activityIds: 'cn.com.langeasy.LangEasyLexis.activity.MainActivity',
-          matches: '[id="cn.com.langeasy.LangEasyLexis:id/bb_checkin"]',
-          snapshotUrls: 'https://i.gkd.li/i/13610321',
+          activityIds: '.activity.MainActivity',
+          matches: '[vid="bb_checkin"]',
+          snapshotUrls: 'https://i.gkd.li/i/13610321', //旧快照
         },
       ],
     },
@@ -29,9 +29,9 @@ export default defineGkdApp({
       resetMatch: 'app',
       rules: [
         {
-          activityIds: 'cn.com.langeasy.LangEasyLexis.activity.MainActivity',
-          matches: '[id="cn.com.langeasy.LangEasyLexis:id/close_float_button"]',
-          snapshotUrls: 'https://i.gkd.li/i/13759025',
+          activityIds: '.activity.MainActivity',
+          matches: '[vid="close_float_button"]',
+          snapshotUrls: 'https://i.gkd.li/i/13759025', //旧快照
         },
       ],
     },

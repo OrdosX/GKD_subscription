@@ -33,9 +33,9 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          activityIds: 'cn.damai.homepage.MainActivity',
-          matches: '[id="cn.damai:id/homepage_popup_window_close_btn"]',
-          snapshotUrls: 'https://i.gkd.li/i/13627900',
+          activityIds: '.homepage.MainActivity',
+          matches: '[vid="homepage_popup_window_close_btn"]',
+          snapshotUrls: 'https://i.gkd.li/i/13627900', //旧快照 (无vid)
         },
       ],
     },

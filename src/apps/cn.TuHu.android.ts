@@ -14,9 +14,8 @@ export default defineGkdApp({
       rules: [
         {
           activityIds: 'cn.TuHu.Activity.tuhutab.TuHuTabActivity',
-          matches:
-            '@[id="cn.TuHu.android:id/imgClose"] - [id="cn.TuHu.android:id/rlContent"] > [id="cn.TuHu.android:id/img_jump"]',
-          snapshotUrls: 'https://i.gkd.li/i/13228818',
+          matches: '@[vid="imgClose"] - [vid="rlContent"] > [vid="img_jump"]',
+          snapshotUrls: 'https://i.gkd.li/i/13228818', //无vid旧快照
         },
       ],
     },
@@ -30,9 +29,9 @@ export default defineGkdApp({
       rules: [
         {
           activityIds: 'cn.TuHu.Activity.tuhutab.TuHuTabActivity',
-          matches: '[id="cn.TuHu.android:id/imgClose"]',
+          matches: '[vid="imgClose"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/13228796',
+            'https://i.gkd.li/i/13228796', //无vid旧快照
             'https://i.gkd.li/i/13256535',
           ],
         },

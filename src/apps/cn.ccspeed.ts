@@ -13,9 +13,8 @@ export default defineGkdApp({
       resetMatch: 'app',
       rules: [
         {
-          activityIds: 'cn.ccspeed.app.MainActivity',
-          matches:
-            '@ImageView[visibleToUser=true] + [id="cn.ccspeed:id/iv_float"]',
+          activityIds: '.app.MainActivity',
+          matches: '@ImageView[visibleToUser=true] + [vid="iv_float"]',
           snapshotUrls: 'https://i.gkd.li/i/13539299',
         },
       ],

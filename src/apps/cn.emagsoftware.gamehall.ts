@@ -14,9 +14,8 @@ export default defineGkdApp({
       rules: [
         {
           activityIds: 'com.migugame.home_module.ui.activity.HomeActivity',
-          matches:
-            '[id="cn.emagsoftware.gamehall:id/btn_update"] -2 [id="cn.emagsoftware.gamehall:id/btn_cancle"]',
-          snapshotUrls: 'https://i.gkd.li/i/13448894',
+          matches: '[vid="btn_update"] -2 [vid="btn_cancle"]',
+          snapshotUrls: 'https://i.gkd.li/i/13448894', //旧快照 (无vid)
         },
       ],
     },

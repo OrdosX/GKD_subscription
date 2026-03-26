@@ -13,7 +13,7 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          activityIds: 'cn.dxy.clinmaster.home.MainActivity',
+          activityIds: '.home.MainActivity',
           matches:
             '@[vid="iv_close"][clickable=true][visibleToUser=true] -2 [text="立即更新"]',
           snapshotUrls: 'https://i.gkd.li/i/25459821',

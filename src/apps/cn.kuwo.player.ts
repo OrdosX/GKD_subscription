@@ -13,9 +13,9 @@ export default defineGkdApp({
       resetMatch: 'app',
       rules: [
         {
-          activityIds: 'cn.kuwo.player.activities.MainActivity',
-          matches: '[id="cn.kuwo.player:id/iv_business_personal_dia_close"]',
-          snapshotUrls: 'https://i.gkd.li/i/13974483',
+          activityIds: '.activities.MainActivity',
+          matches: '[vid="iv_business_personal_dia_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/13974483', //无vid旧快照
         },
       ],
     },

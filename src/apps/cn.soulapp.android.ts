@@ -34,10 +34,9 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          activityIds: 'cn.soulapp.android.component.startup.main.MainActivity',
-          matches:
-            '[id="cn.soulapp.android:id/sl_ad_root"] >n [id="cn.soulapp.android:id/fl_tag_container"]',
-          snapshotUrls: 'https://i.gkd.li/i/12838000',
+          activityIds: '.component.startup.main.MainActivity',
+          matches: '[vid="sl_ad_root"] >n [vid="fl_tag_container"]',
+          snapshotUrls: 'https://i.gkd.li/i/12838000', //无vid旧快照
         },
       ],
     },
@@ -82,10 +81,10 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            '@[id="cn.soulapp.android:id/img_close"] -2 RelativeLayout > [text="升级到最新版本"]',
+            '@[vid="img_close"] -2 RelativeLayout > [text="升级到最新版本"]',
           exampleUrls: 'https://e.gkd.li/b8aedb39-1ef1-4b41-80da-0948614d9c7f',
           snapshotUrls: [
-            'https://i.gkd.li/i/13693361',
+            'https://i.gkd.li/i/13693361', //无vid旧快照
             'https://i.gkd.li/i/18096443',
           ],
         },
@@ -119,15 +118,13 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          activityIds:
-            'cn.soulapp.android.component.square.post.base.detail.PostDetailActivity',
+          activityIds: '.component.square.post.base.detail.PostDetailActivity',
           matches: '@ImageView[visibleToUser=true] <2 * < [vid="tvAdClose"]',
           snapshotUrls: 'https://i.gkd.li/i/14332294',
         },
         {
           key: 1,
-          activityIds:
-            'cn.soulapp.android.component.square.post.base.detail.PostDetailActivity',
+          activityIds: '.component.square.post.base.detail.PostDetailActivity',
           matches: '@[clickable=true][visibleToUser=true] >2 [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/14359616',
         },

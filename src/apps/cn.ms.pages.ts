@@ -20,7 +20,7 @@ export default defineGkdApp({
         {
           key: 1,
           fastQuery: true,
-          activityIds: 'cn.ms.pages.ActivityLingPai',
+          activityIds: '.ActivityLingPai',
           matches:
             'ImageView < @ViewGroup[clickable=true] < ViewGroup +n ViewGroup [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/16136277',
@@ -28,7 +28,7 @@ export default defineGkdApp({
         {
           key: 2,
           fastQuery: true,
-          activityIds: 'cn.ms.pages.ActivityLingPai',
+          activityIds: '.ActivityLingPai',
           matches: ['[text="广告"]', '[text="跳过"]'],
           snapshotUrls: 'https://i.gkd.li/i/16136271',
         },

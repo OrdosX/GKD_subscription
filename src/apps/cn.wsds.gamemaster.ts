@@ -12,14 +12,14 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          activityIds: 'cn.wsds.gamemaster.ui.gamedetails.ActivityGameDetails',
+          activityIds: '.ui.gamedetails.ActivityGameDetails',
           matches:
             'ViewGroup[childCount=2] > @ImageView[childCount=0][index=1][clickable=true][visibleToUser=true] - [text="立即下载"]',
           snapshotUrls: 'https://i.gkd.li/i/13930398',
         },
         {
           preKeys: [0],
-          activityIds: 'cn.wsds.gamemaster.ui.gamedetails.ActivityGameDetails',
+          activityIds: '.ui.gamedetails.ActivityGameDetails',
           matches: '[text="不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/i/13930399',
         },

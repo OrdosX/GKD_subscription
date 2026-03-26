@@ -14,8 +14,8 @@ export default defineGkdApp({
         {
           activityIds: 'cn.com.ruijie.wifibox.activity.MainActivity',
           matches:
-            '@ImageView[id="cn.com.ruijie.magicbox:id/imageView_close"] +(2) RelativeLayout > LinearLayout > [text*="新版本"]',
-          snapshotUrls: 'https://i.gkd.li/i/12642359',
+            '@ImageView[vid="imageView_close"] +(2) RelativeLayout > LinearLayout > [text*="新版本"]',
+          snapshotUrls: 'https://i.gkd.li/i/12642359', //旧快照
         },
       ],
     },

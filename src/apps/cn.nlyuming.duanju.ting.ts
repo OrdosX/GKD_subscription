@@ -14,7 +14,7 @@ export default defineGkdApp({
       resetMatch: 'app',
       rules: [
         {
-          activityIds: 'cn.nlyuming.duanju.ting.MainActivity',
+          activityIds: '.MainActivity',
           matches:
             '@ImageView[childCount=0][visibleToUser=true] < FrameLayout[childCount=1] <2 FrameLayout[childCount=3] < FrameLayout < FrameLayout < FrameLayout < FrameLayout < [id="android:id/content"]',
           exampleUrls:

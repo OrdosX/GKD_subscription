@@ -14,9 +14,9 @@ export default defineGkdApp({
       resetMatch: 'app',
       rules: [
         {
-          activityIds: 'cn.honor.qinxuan.MainActivity',
-          matches: '[id="cn.honor.qinxuan:id/iv_close_dlg"]',
-          snapshotUrls: 'https://i.gkd.li/i/13930613',
+          activityIds: '.MainActivity',
+          matches: '[vid="iv_close_dlg"]',
+          snapshotUrls: 'https://i.gkd.li/i/13930613', //无vid旧快照
         },
       ],
     },
