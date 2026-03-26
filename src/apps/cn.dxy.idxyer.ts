@@ -7,10 +7,10 @@ export default defineGkdApp({
     {
       key: 1,
       name: '局部广告',
+      fastQuery: true,
       rules: [
         {
           key: 0,
-          fastQuery: true,
           activityIds: '.biz.main.MainActivity',
           matches: '[vid="iv_image_close"][visibleToUser=true]',
           snapshotUrls: [
@@ -20,9 +20,8 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          fastQuery: true,
-          matches:
-            '@[vid="iv_close"] <<n [vid="include_ad"][visibleToUser=true]',
+          activityIds: '.biz.job.JobHomeActivity',
+          matches: '[vid="include_ad"] > [vid="iv_close"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/24858514',
         },
       ],
@@ -80,7 +79,8 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '功能类-丁香园安全中心-自动点击继续访问',
+      name: '功能类-点击[继续访问]外链接',
+      desc: '丁香园安全中心',
       rules: [
         {
           action: 'clickCenter',
@@ -122,7 +122,8 @@ export default defineGkdApp({
     },
     {
       key: 7,
-      name: '功能类-药品说明书-表格全屏自动横屏观看',
+      name: '功能类-自动点击[横屏]观看',
+      desc: '药品说明书-表格全屏',
       rules: [
         {
           key: 0,
@@ -278,18 +279,18 @@ export default defineGkdApp({
       key: 16,
       name: '功能类-自动解除医学领域图片内容',
       desc: '查看-返回操作',
-      fastQuery: true,
       rules: [
         {
           key: 0,
           activityIds: '.biz.post.PostDetailActivity',
           action: 'clickCenter',
           matches:
-            'Button[visibleToUser=true] -6 View > @[desc^="涉及医学专业领域的"][clickable=true][visibleToUser=true] <<n View[childCount=9] <<n FrameLayout - [vid="post_detail_title_fl"]',
+            '[childCount=9] >2 [desc^="涉及医学专业领域的"][clickable=true][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/25459917', // 有时加载不全，无法捕获到‘查看’控件
         },
         {
           preKeys: [0],
+          fastQuery: true,
           activityIds: '.common.WebViewActivity',
           matches: '[vid="toolbar"]',
           action: 'back',
