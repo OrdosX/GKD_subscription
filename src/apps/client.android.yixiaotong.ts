@@ -12,8 +12,7 @@ export default defineGkdApp({
           key: 0,
           name: '腾讯广告',
           fastQuery: true,
-          activityIds:
-            'client.android.yixiaotong.v3.ui.appcontrol.bath.BathDetailActivity',
+          activityIds: '.v3.ui.appcontrol.bath.BathDetailActivity',
           matches:
             '@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null][parent.childCount>3] <n FrameLayout >(2,3) [text^="立即" || text$="详情" || text^="了解" || text="去微信看看" || text$="应用" || text="进入小程序" || text="领取优惠" || text="跳转微信"]',
           snapshotUrls: 'https://i.gkd.li/i/13055837',
@@ -21,10 +20,9 @@ export default defineGkdApp({
         {
           key: 1,
           name: '快手广告-1',
-          activityIds:
-            'client.android.yixiaotong.v3.ui.appcontrol.bath.BathDetailActivity',
+          activityIds: '.v3.ui.appcontrol.bath.BathDetailActivity',
           matches:
-            '[id="client.android.yixiaotong:id/ksad_tk_view"] >n ViewGroup + ViewGroup > @ViewGroup > ImageView',
+            '[id$="ksad_tk_view"] >n ViewGroup + * > @ViewGroup[clickable=true] > ImageView[width<48]',
           snapshotUrls: 'https://i.gkd.li/i/13060116',
         },
         {
@@ -41,9 +39,9 @@ export default defineGkdApp({
       key: 2,
       name: '局部广告-卡片广告',
       activityIds: [
-        'client.android.yixiaotong.v3.ui.V3MainActivity',
-        'client.android.yixiaotong.v3.ui.appcontrol.bath.BathControlActivity',
-        'client.android.yixiaotong.v3.ui.appcontrol.bath.BathDetailActivity',
+        '.v3.ui.V3MainActivity',
+        '.v3.ui.appcontrol.bath.BathControlActivity',
+        '.v3.ui.appcontrol.bath.BathDetailActivity',
       ],
       rules: [
         {
@@ -58,7 +56,7 @@ export default defineGkdApp({
           name: '快手广告',
           fastQuery: true,
           matches:
-            '@TextView[clickable=true][childCount=0][visibleToUser=true] + View > [visibleToUser=true][text="广告"] <<n [id="client.android.yixiaotong:id/ksad_container"]',
+            '@TextView[clickable=true][childCount=0][visibleToUser=true] + View > [visibleToUser=true][text="广告"] <<n [vid="ksad_container"]',
           snapshotUrls: 'https://i.gkd.li/i/13450887',
         },
         {
