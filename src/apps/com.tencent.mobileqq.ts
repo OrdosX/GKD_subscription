@@ -463,5 +463,35 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 36,
+      name: '功能类-QQ空间不看[官方Qzone]的动态',
+      rules: [
+        {
+          key: 0,
+          fastQuery: true,
+          activityIds:
+            'com.qzone.reborn.feedpro.activity.QzoneFriendFeedProActivity',
+          matches:
+            '@ImageView[clickable=true][width<160 && height<160] - * >2 [desc="官方Qzone"] <<n ViewGroup +n * >2 [text^="说点什么吧"]',
+          snapshotUrls: 'https://i.gkd.li/i/26308400',
+        },
+        {
+          key: 1,
+          preKeys: 0,
+          fastQuery: true,
+          activityIds:
+            'com.qzone.reborn.feedpro.activity.QzoneFriendFeedProActivity',
+          matches: '@[clickable=true] > [text^="不看此条"][text$="动态"]',
+          snapshotUrls: 'https://i.gkd.li/i/26308405',
+        },
+        {
+          key: 2,
+          activityIds: '.activity.QPublicTransFragmentActivity',
+          matches: '[desc="确认不看此条动态吗？"] +n [desc="确定"]',
+          snapshotUrls: 'https://i.gkd.li/i/26308417',
+        },
+      ],
+    },
   ],
 });
