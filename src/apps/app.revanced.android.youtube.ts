@@ -14,9 +14,9 @@ export default defineGkdApp({
           activityIds:
             'com.google.android.apps.youtube.app.watchwhile.MainActivity',
           matches:
-            '@Button[desc="Close"][clickable=true][visibleToUser=true][width<150 && height<150] <<n [vid="custom"]',
-          exampleUrls: 'https://e.gkd.li/3c45eae4-383d-489b-ae58-f58d70ea4478',
+            '[!(getChild(0).getChild(0).desc="Image attachment")] + @[desc="不用了，谢谢" || desc="关闭" || desc="我暂时不要" || desc="Close" || desc="No thanks"][visibleToUser=true] -n ImageView < * < [vid="custom"]',
           snapshotUrls: 'https://i.gkd.li/i/20856330',
+          exampleUrls: 'https://e.gkd.li/3c45eae4-383d-489b-ae58-f58d70ea4478',
         },
       ],
     },
@@ -31,12 +31,9 @@ export default defineGkdApp({
           activityIds:
             'com.google.android.apps.youtube.app.watchwhile.MainActivity',
           matches:
-            '@Button[desc^="翻译成"||desc^="Translate to"][clickable=true][visibleToUser=true] <<n [vid="results" || vid="section_list"]',
+            '@Button[desc^="翻译成"||desc^="Translate to"][clickable=true][visibleToUser=true] -n [desc^="@"] <<3 ViewGroup -n * < [vid="results" || vid="section_list"]',
+          snapshotUrls: 'https://i.gkd.li/i/25462649',
           exampleUrls: 'https://e.gkd.li/f43ebb75-f0d2-4447-9681-2937f72cf3f7',
-          snapshotUrls: [
-            'https://i.gkd.li/i/25462645', // En_translate前
-            'https://i.gkd.li/i/25462649', // En_translate后
-          ],
         },
       ],
     },
