@@ -10,6 +10,8 @@ export default defineGkdApp({
       fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
+      scopeKeys: [13], // 规则组key13也是开屏广告
+      actionMaximumKey: 0, // key13-0
       resetMatch: 'app',
       priorityTime: 10000,
       rules: [
@@ -212,6 +214,7 @@ export default defineGkdApp({
       priorityTime: 10000,
       rules: [
         {
+          key: 0,
           activityIds: [
             '.mini.appbrand.ui.AppBrandUI',
             '.activity.miniaio.MiniChatActivity',
