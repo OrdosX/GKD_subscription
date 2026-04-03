@@ -7,30 +7,28 @@ export default defineGkdApp({
     {
       key: 0,
       name: '开屏广告',
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
+      actionMaximumKey: 0,
       resetMatch: 'app',
+      priorityTime: 10000,
       rules: [
         {
           key: 0,
-          fastQuery: true,
           matches:
             '[text*="跳过"][text.length<10][width<500 && height<300][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/26462136',
         },
         {
           key: 1,
-          fastQuery: true,
           matches:
-            '@[text=null][clickable=true][width<500][height<200] - * >2 [text*="广告"][text.length<10][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/26332230',
-        },
-        {
-          key: 2,
-          fastQuery: true,
-          matches:
-            '@View[id=null][text=null][clickable=true][width<200 && height<200] - * >11 [text^="立即"]',
-          snapshotUrls: 'https://i.gkd.li/i/26462322',
+            '@[name$="View"][clickable=true][width<500 && height<300] <3 FrameLayout[childCount=4] <<(2,4) [vid="adsFl"]',
+          snapshotUrls: [
+            // 'https://i.gkd.li/i/26462136', // key0也能匹配
+            'https://i.gkd.li/i/26332230',
+            'https://i.gkd.li/i/26462322',
+          ],
         },
       ],
     },
