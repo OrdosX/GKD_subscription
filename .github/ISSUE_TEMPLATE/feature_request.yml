@@ -5,14 +5,14 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## ⚠️ 在提交 issue 之前，请您务必确认以下信息，否则你的 issue 可能会被关闭❗❗❗
+        ## ⚠️ 在提交 issue 之前，请您务必确认以下信息，否则此 issue 可能会被关闭❗❗❗
 
         > [!WARNING]
         > - 不要提供截图，截图对编写规则**没有任何作用❗**
         > - 不要使用**截屏快照**
 
   - type: checkboxes
-    id: check-group
+    id: base-info-confirm
     attributes:
       label: ✅ 请核对以下内容
       options:
@@ -24,7 +24,7 @@ body:
           required: true
 
   - type: checkboxes
-    id: snapshot-group
+    id: snapshot-confirm
     attributes:
       label: 📸 请确认快照已正确完整提供
       options:
@@ -34,7 +34,7 @@ body:
           required: true
 
   - type: textarea
-    id: feature-description
+    id: snapshot
     attributes:
       label: |
         📸 需要适配界面的快照
