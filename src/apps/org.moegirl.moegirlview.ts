@@ -12,7 +12,7 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: '.MainActivity',
           matches:
-            'ImageView < @FrameLayout <3 FrameLayout[childCount>3] <<7 View - View[getChild(1).name$="EditText"] <<5 [id="android:id/content"]',
+            '@ImageView[width<50 && height<50] < FrameLayout <3 FrameLayout[childCount>3] <<7 View - View > EditText <<7 [id="android:id/content"]',
           snapshotUrls: 'https://i.gkd.li/i/26493172',
         },
       ],
