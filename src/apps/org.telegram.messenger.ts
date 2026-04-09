@@ -74,7 +74,10 @@ export default defineGkdApp({
           activityIds: 'org.telegram.ui.LaunchActivity',
           matches:
             '@[text="Not now" || text^="稍后"] < [childCount=2] - ScrollView >2 [text*="contacts" || text*="联系人"][text.length>20]',
-          snapshotUrls: 'https://i.gkd.li/i/26602366',
+          snapshotUrls: [
+            'https://i.gkd.li/i/26602366',
+            'https://i.gkd.li/i/26609984',
+          ],
         },
       ],
     },
