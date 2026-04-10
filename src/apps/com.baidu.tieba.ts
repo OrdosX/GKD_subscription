@@ -158,13 +158,19 @@ export default defineGkdApp({
             '.pb.pb.main.PbActivity',
             '.forum.ForumActivity',
           ],
-          matches:
+          anyMatches: [
             '@View[clickable=true][visibleToUser=true] - [text^="选择不喜欢"]',
-          exampleUrls: 'https://e.gkd.li/67a159e7-59ea-45f6-909c-7a681c4d3838',
+            '[text="已经看过"][clickable=true]',
+          ],
+          exampleUrls: [
+            'https://e.gkd.li/67a159e7-59ea-45f6-909c-7a681c4d3838',
+            'https://e.gkd.li/5f9ebe98-dfd1-41a4-bb93-b1a45aa00549',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/16595134',
             'https://i.gkd.li/i/16595511',
             'https://i.gkd.li/i/16595113',
+            'https://i.gkd.li/i/26634661', // [已经看过]
           ],
         },
       ],
