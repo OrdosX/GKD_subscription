@@ -364,6 +364,7 @@ export const openAdBlackListAppIDs = new Set([
   'xyz.nextalone.nagram', // Nagram (单独禁用[开屏]和[青少年],需解开[更新提示] https://i.gkd.li/i/25640114 )
   'eu.smartpatient.mytherapy', // MyTherapy_误触 https://i.gkd.li/i/26222977
   'app.revanced.manager.flutter', // ReVanced Manager 为开源app且误触 https://i.gkd.li/i/26644042
+  'com.chaoxing.mobile', // 学习通 开屏广告_误触-添加组织邀请码 https://i.gkd.li/i/26644056
 ]);
 
 // 更新提示黑名单
