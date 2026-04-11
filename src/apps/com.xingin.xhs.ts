@@ -136,11 +136,18 @@ export default defineGkdApp({
         {
           preKeys: [0],
           name: '点"不感兴趣"',
-          matches:
+          anyMatches: [
             'RecyclerView > @LinearLayout[index=0] > TextView[text^="不喜欢"]',
+            'ViewGroup > @[childCount=2] > TextView[text="不喜欢"][visibleToUser=true]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/13455500',
             'https://i.gkd.li/i/14392187',
+            'https://i.gkd.li/i/26647708', // 新版本
+          ],
+          exampleUrls: [
+            'https://e.gkd.li/cbf948c2-8a78-42a2-911d-c2369aaeff7d',
+            'https://e.gkd.li/09f8f42b-ed78-4cd1-9d77-8327ca91e1e0',
           ],
         },
       ],
