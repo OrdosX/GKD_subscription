@@ -81,5 +81,42 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 6,
+      name: '功能类-更多-保存到相册',
+      desc: '右上角菜单-点击[保存到相册]',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: 'org.telegram.ui.LaunchActivity',
+          matches:
+            '@[clickable=true][left>350] > [text="保存到相册" || text="Save to Gallery"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/26645432', // 保存到相册
+            'https://i.gkd.li/i/26645464', // Save to Gallery
+          ],
+          excludeSnapshotUrls: 'https://i.gkd.li/i/26645468', // [left=83]
+          exampleUrls: 'https://e.gkd.li/f164341a-32fa-4054-9ae1-85d5e686bd64',
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '功能类-只保存单个媒体',
+      desc: '弹窗-点击 [这张图片]或[这个媒体]',
+      rules: [
+        {
+          fastQuery: true,
+          matches:
+            '[text^="保存" || text^="Save"] < * +2 * > [text^="这" || text^="This"][clickable=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/26645508', //图片
+            'https://i.gkd.li/i/26645509', //This photo
+          ],
+          exampleUrls: 'https://e.gkd.li/322731e7-f595-4775-9986-a9cff001e861',
+          activityIds: 'org.telegram.ui.LaunchActivity',
+        },
+      ],
+    },
   ],
 });
