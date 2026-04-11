@@ -105,5 +105,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 4,
+      name: '通知提示-聊天记忆容量警告',
+      desc: 'x掉通知',
+      rules: [
+        {
+          activityIds: '.MainActivity',
+          matches:
+            'View[childCount=5] >2 [text="升级"][visibleToUser=true] < View[childCount=3] - @View[clickable=true] > [desc="关闭"]',
+          snapshotUrls: 'https://i.gkd.li/i/26647576',
+          exampleUrls: 'https://e.gkd.li/a53e015f-2b08-4177-80aa-b516d213b333',
+        },
+      ],
+    },
   ],
 });
