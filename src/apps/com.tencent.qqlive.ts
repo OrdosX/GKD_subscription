@@ -154,8 +154,11 @@ export default defineGkdApp({
         {
           key: 10,
           matches:
-            '@View[clickable=true][childCount=0][width<90 && height<90] <n View + [text="广告"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/24715171',
+            '@View[clickable=true] <4 View[childCount>4] + [text="广告"][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/24715171',
+            'https://i.gkd.li/i/26660624',
+          ],
         },
         {
           preKeys: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
