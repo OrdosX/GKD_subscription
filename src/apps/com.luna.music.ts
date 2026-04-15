@@ -112,11 +112,26 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '功能类-自动看广告领VIP',
+      name: '功能类-全自动看广告领VIP',
       desc: '⚠️二选一,广告一直看下去直到手动干预退出,适合需要领多天vip的用户,与单日规则互斥',
       rules: [
         {
+          name: '开屏自动看视频',
           key: 0,
+          fastQuery: true,
+          activityIds: 'com.luna.biz.main.main.MainActivity',
+          actionMaximum: 1,
+          priorityTime: 5000,
+          resetMatch: 'app',
+          matches: [
+            '[vid="ui"] > [childCount=6] >2 [text="今日畅听"] + [text^="第" || text$="个"]',
+            '@[clickable=true][index=parent.childCount.minus(1)] < * <3 FrameLayout < [vid="ui"]',
+          ],
+          snapshotUrls: 'https://i.gkd.li/i/26758188',
+          exampleUrls: 'https://e.gkd.li/194773d6-a9c0-48c4-84bf-e1a57449434b',
+        },
+        {
+          key: 1,
           name: '①x掉-坐标轮询点击',
           fastQuery: true,
           actionDelay: 10000,
@@ -137,7 +152,7 @@ export default defineGkdApp({
           exampleUrls: 'https://e.gkd.li/87c7201a-f413-4d82-9198-2dc9455c4f23',
         },
         {
-          key: 1,
+          key: 2,
           name: '①跳过',
           activityIds:
             'com.bytedance.sdk.openadsdk.core.component.reward.activity.TTRewardVideoActivity',
@@ -145,7 +160,7 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/i/24522627',
         },
         {
-          preKeys: [0, 1], // 轮询判断是否已领取
+          preKeys: [1, 2], // 轮询判断是否已领取
           name: '②没结束-继续轮询',
           fastQuery: true,
           actionDelay: 500,
@@ -236,12 +251,27 @@ export default defineGkdApp({
     },
     {
       key: 13,
-      name: '功能类-自动看广告领VIP_单日',
+      name: '功能类-全自动看广告领VIP_单日',
       desc: '⚠️二选一,领到今天vip收手退出,适合只想领一天vip的用户,与多日规则互斥',
       rules: [
         {
-          name: '①x掉-坐标轮询点击',
+          name: '开屏自动看视频',
           key: 0,
+          fastQuery: true,
+          activityIds: 'com.luna.biz.main.main.MainActivity',
+          actionMaximum: 1,
+          priorityTime: 5000,
+          resetMatch: 'app',
+          matches: [
+            '[vid="ui"] > [childCount=6] >2 [text="今日畅听"] + [text^="第" || text$="个"]',
+            '@[clickable=true][index=parent.childCount.minus(1)] < * <3 FrameLayout < [vid="ui"]',
+          ],
+          snapshotUrls: 'https://i.gkd.li/i/26758188',
+          exampleUrls: 'https://e.gkd.li/194773d6-a9c0-48c4-84bf-e1a57449434b',
+        },
+        {
+          name: '①x掉-坐标轮询点击', // 形式1-主要
+          key: 1,
           fastQuery: true,
           actionDelay: 10000,
           position: {
@@ -261,8 +291,8 @@ export default defineGkdApp({
           exampleUrls: 'https://e.gkd.li/87c7201a-f413-4d82-9198-2dc9455c4f23',
         },
         {
-          name: '①跳过',
-          key: 1,
+          name: '①跳过', // 形式2
+          key: 2,
           activityIds:
             'com.bytedance.sdk.openadsdk.core.component.reward.activity.TTRewardVideoActivity',
           matches: '[visibleToUser=true][text="奖励已领取"]',
@@ -270,7 +300,7 @@ export default defineGkdApp({
         },
         {
           name: '②没结束-继续轮询',
-          preKeys: [0, 1], // 轮询判断是否已领取
+          preKeys: [1, 2], // 轮询判断是否已领取
           fastQuery: true,
           actionDelay: 500,
           activityIds: [
@@ -291,7 +321,7 @@ export default defineGkdApp({
           excludeSnapshotUrls: 'https://i.gkd.li/i/24521416',
         },
         {
-          key: 2,
+          key: 3,
           name: '③今日结束退出',
           fastQuery: true,
           actionDelay: 500,
@@ -305,7 +335,7 @@ export default defineGkdApp({
           exampleUrls: 'https://e.gkd.li/8cc22cd9-f48e-4aaa-8c5c-a04a752e6df6',
         },
         {
-          preKeys: [2],
+          preKeys: [3],
           name: '④再看视频?-返回操作',
           fastQuery: true,
           activityIds: 'com.luna.biz.main.main.MainActivity',
@@ -315,7 +345,7 @@ export default defineGkdApp({
           exampleUrls: 'https://e.gkd.li/d3902ed0-5e8d-4c0c-b8ae-5bf3f64c84a8',
         },
         {
-          key: 99,
+          key: 99, // 未知
           fastQuery: true,
           activityIds: 'com.ss.android.excitingvideo.ExcitingVideoActivity',
           matches:
