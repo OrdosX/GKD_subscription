@@ -6,7 +6,7 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '全屏广告-弹窗广告',
+      name: '全屏广告',
       rules: [
         {
           key: 0,
@@ -18,15 +18,15 @@ export default defineGkdApp({
             'com.adgain.sdk.base.activity.AdActivity',
           ],
           matches:
-            '[vid="tv_ad_free_close" || vid="tv_ad_free_colse" || vid="adgain_interstitial_skip_ll" || vid="adgain_interstitial_close_ll"][visibleToUser=true]',
+            '[vid="tv_ad_free_colse" || vid="tv_ad_free_close" || vid="adgain_interstitial_skip_ll" || vid="adgain_interstitial_close_ll"][visibleToUser=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/4cafd5fd-b5ed-4df1-b9f2-f443f53a7166',
           snapshotUrls: [
-            'https://i.gkd.li/i/13546173',
-            'https://i.gkd.li/i/14696860',
-            'https://i.gkd.li/i/18121213',
-            'https://i.gkd.li/i/24675097',
-            'https://i.gkd.li/i/24927790',
+            'https://i.gkd.li/i/13546173', // tv_ad_free_colse
+            'https://i.gkd.li/i/14696860', // tv_ad_free_close
+            'https://i.gkd.li/i/18121213', // tv_ad_free_close
+            'https://i.gkd.li/i/24675097', // adgain_interstitial_skip_ll
+            'https://i.gkd.li/i/24927790', // adgain_interstitial_close_ll
           ],
         },
         {
@@ -41,12 +41,11 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          activityIds:
-            'com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoActivity',
+          fastQuery: true,
+          activityIds: 'com.byazt.sr.Stub_Standard_Portrait_Activity',
           matches:
-            '[text="反馈"] -4 View[childCount=1] > Image[childCount=0][text=""]',
-          exampleUrls: 'https://e.gkd.li/2ec6e71f-93b4-4ac4-a464-26d2a859445f',
-          snapshotUrls: 'https://i.gkd.li/i/17247801',
+            '@ImageView < [width<98 && height<93] < * < ViewGroup - * >2 [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/26871333',
         },
         {
           key: 3,
@@ -107,8 +106,14 @@ export default defineGkdApp({
           action: 'back',
           activityIds: '.MainActivity',
           matches:
-            '[desc="开通前请阅读"] -8 @ImageView[clickable=true][childCount=0][visibleToUser=true] < View < View < View < View < FrameLayout < FrameLayout < [id="android:id/content"]',
-          snapshotUrls: 'https://i.gkd.li/i/21820334',
+            '[desc="开通前请阅读"] -n @ImageView[childCount=0][width>800] <(1,2) View[childCount>8] <<(5,6) [id="android:id/content"]',
+          snapshotUrls: [
+            // 邀开会员
+            'https://i.gkd.li/i/21820334',
+            'https://i.gkd.li/i/24119773',
+            'https://i.gkd.li/i/25128678',
+          ],
+          exampleUrls: 'https://e.gkd.li/ee504d60-ca93-40de-bb0f-292ef1df8c70',
         },
         {
           key: 9,
@@ -117,28 +122,6 @@ export default defineGkdApp({
           matches:
             '@[id="cj.mobile.wm.allmodules:id/wm_pop_pic_close"] +n * > [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/23253580',
-        },
-        {
-          key: 10,
-          activityIds:
-            'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
-          matches:
-            '@Image[childCount=0][width<60 && height<60] < View[childCount=1] < View[childCount=1] < View[childCount=1] < View[childCount=1] + View >2 [text="广告"]',
-          exampleUrls: 'https://e.gkd.li/34c7741f-0f03-4b0d-b8d2-917ed297e304',
-          snapshotUrls: 'https://i.gkd.li/i/24119772',
-        },
-        {
-          key: 11,
-          fastQuery: true,
-          action: 'back',
-          activityIds: '.MainActivity',
-          matches:
-            '[desc="开通前请阅读"] -n @ImageView[childCount=0][width>800] <(1,2) View < View < View < View < FrameLayout < [id="android:id/content"]',
-          exampleUrls: 'https://e.gkd.li/ee504d60-ca93-40de-bb0f-292ef1df8c70',
-          snapshotUrls: [
-            'https://i.gkd.li/i/24119773',
-            'https://i.gkd.li/i/25128678',
-          ],
         },
         {
           key: 12,
@@ -154,12 +137,32 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: '.MainActivity',
           matches:
-            '@TextView[clickable=true][childCount=0] <2 FrameLayout[childCount=2] - LinearLayout >4 [text$="第三方应用"][visibleToUser=true]',
+            '@TextView[clickable=true] <2 FrameLayout[childCount=2] - LinearLayout >4 [text$="第三方应用"]',
           exampleUrls: 'https://e.gkd.li/e6486e20-e908-48da-b84a-f3ea5519346b',
           snapshotUrls: 'https://i.gkd.li/i/24404354',
         },
+
+        // 不支持快查的放到后面, 让有快查的优先匹配
         {
-          key: 14,
+          key: 101,
+          activityIds:
+            'com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoActivity',
+          matches:
+            '[text="反馈"] -4 [childCount=1] > Image[text=""][width<69][height<66]',
+          exampleUrls: 'https://e.gkd.li/2ec6e71f-93b4-4ac4-a464-26d2a859445f',
+          snapshotUrls: 'https://i.gkd.li/i/17247801',
+        },
+        {
+          key: 102,
+          activityIds:
+            'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
+          matches:
+            '@Image[childCount=0][width<60 && height<60] < View[childCount=1] < View[childCount=1] < View[childCount=1] < View[childCount=1] + View >2 [text="广告"]',
+          exampleUrls: 'https://e.gkd.li/34c7741f-0f03-4b0d-b8d2-917ed297e304',
+          snapshotUrls: 'https://i.gkd.li/i/24119772',
+        },
+        {
+          key: 103,
           activityIds:
             'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
           matches:
@@ -167,20 +170,20 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/i/24473530',
         },
         {
-          key: 15,
+          key: 104,
           activityIds: 'com.byazt.sr.Stub_Standard_Portrait_Activity',
           matches: 'View[childCount=5] > [text^="svg"][index=0][childCount=0]',
           snapshotUrls: 'https://i.gkd.li/i/25128382',
         },
         {
-          key: 16,
+          key: 105,
           activityIds: '.MainActivity',
           matches:
             'View[childCount=0] < FrameLayout[childCount=2] - LinearLayout >4 [text$="第三方应用"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/25128313',
         },
         {
-          key: 17,
+          key: 106,
           activityIds:
             'com.sigmob.sdk.base.common.PortraitTransparentAdActivity',
           matches: '[id="ad_area"] > [id="close_btn"]',
