@@ -335,9 +335,12 @@ export default defineGkdApp({
           name: '④再看视频?-返回操作',
           fastQuery: true,
           activityIds: 'com.luna.biz.main.main.MainActivity',
-          matches: '[text$="天畅听"] + [text^="再看"][text$="个提前领"]',
+          matches: '[text$="畅听"] + [text^="再看"][text$="个提前领"]',
           action: 'back',
-          snapshotUrls: 'https://i.gkd.li/i/26411131',
+          snapshotUrls: [
+            'https://i.gkd.li/i/26411131',
+            'https://i.gkd.li/i/26905455',
+          ],
           exampleUrls: 'https://e.gkd.li/d3902ed0-5e8d-4c0c-b8ae-5bf3f64c84a8',
         },
         {
