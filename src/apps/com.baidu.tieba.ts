@@ -348,13 +348,12 @@ export default defineGkdApp({
           key: 0,
           name: '贴吧页签到',
           activityIds: '.forum.ForumActivity',
-          anyMatches: [
-            '@TextView[text="签到"][visibleToUser=true] <3 View < View <2 View < View < WebView < WebView < FrameLayout < ViewGroup <2 FrameLayout < FrameLayout < [id="android:id/content"]',
-            '@TextView[text="签到"][visibleToUser=true] <5 View < View <2 View < WebView < WebView < FrameLayout < ViewGroup <2 FrameLayout < FrameLayout < [id="android:id/content"]',
-          ],
+          matches:
+            '@TextView[text="签到"][visibleToUser=true] <n View < View <2 View < * < WebView <<(6,7) [id="android:id/content"]',
           snapshotUrls: [
             'https://i.gkd.li/i/15087289',
             'https://i.gkd.li/i/17902156',
+            'https://i.gkd.li/i/27051552',
           ],
         },
         {
@@ -367,6 +366,7 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/i/15087327',
             'https://i.gkd.li/i/15881225',
+            'https://i.gkd.li/i/27051969',
           ],
         },
       ],
