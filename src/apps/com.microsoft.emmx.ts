@@ -63,5 +63,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '功能类-自动打开外部应用',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: 'org.chromium.chrome.browser.ChromeTabbedActivity',
+          matches:
+            '[text*="想要打开外部应用"][visibleToUser=true] +2 [childCount=3] > [vid="button1"]',
+          snapshotUrls: 'https://i.gkd.li/i/27094149',
+          exampleUrls: 'https://e.gkd.li/69bfe8dd-80c6-41c9-9f8c-35d214ebcac8',
+        },
+      ],
+    },
   ],
 });
